@@ -1,23 +1,11 @@
-# Uncomment this if you reference any of your controllers in activate
-# require_dependency 'application_controller'
-
 class NavigationExtension < Radiant::Extension
-  version "1.0"
-  description "Describe your extension here"
-  url "http://yourwebsite.com/navigation"
   
-  # extension_config do |config|
-  #   config.gem 'some-awesome-gem
-  #   config.after_initialize do
-  #     run_something
-  #   end
-  # end
-
-  # See your config/routes.rb file in this extension to define custom routes
+  version "1.0"
+  description "Tags de navigation pour générer les menus"
+  url "https://github.com/lunaweb/radiant-navigation-extension"
   
   def activate
-    # tab 'Content' do
-    #   add_item "Navigation", "/admin/navigation", :after => "Pages"
-    # end
+    Page.send :include, NavigationTags
   end
+  
 end
